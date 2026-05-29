@@ -540,6 +540,10 @@ public class SeleniumTestSuite {
                 .orElseThrow(() -> new RuntimeException("New window handle not found"));
 
         getDriver().switchTo().window(newHandle);
+
+        // Wait for title to load — page may not be ready immediately after switch
+        getWait().until(ExpectedConditions.titleIs("New Window"));
+
         Assert.assertEquals(getDriver().getTitle(), "New Window",
                 "New window title should be 'New Window'");
 
