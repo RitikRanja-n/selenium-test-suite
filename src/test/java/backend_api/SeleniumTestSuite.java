@@ -279,7 +279,7 @@ public class SeleniumTestSuite {
     // =========================================================================
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
-    public void setupBrowser(@Optional("chrome") String browser, Method method) {
+    public void setupBrowser(@org.testng.annotations.Optional("chrome") String browser, Method method) {
 
         // 1. Structured log line
         log.info("▶ [{}] -> {}", browser.toUpperCase(), method.getName());
